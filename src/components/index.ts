@@ -4,3 +4,7 @@ export * from './carousel'
 export * from './sideMenu'
 export * from './productCollection'
 export * from './businessPartners'
+export * from "./productIntro"
+export * from "./productComments"
+export * from "./filter"
+export * from './productList'
