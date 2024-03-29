@@ -2,6 +2,8 @@
 
 The front-end for an online eCommerce travel platform "iTravel". App built based on React and TypeScript.
 
+![iTravel](https://github.com/Qiugu-He/TravelApp/blob/main/public/Screenshoot.png)
+
 ## Techs:
 - create-react-app based on TS running environment
 - redux-toolkits/redux 
