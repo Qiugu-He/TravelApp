@@ -46,7 +46,6 @@ class HomePageComponent extends React.Component<PropsType> {
   }
 
   render(): React.ReactNode {
-    // console.log(this.props.navigate)
     const { t } = this.props;
     const { productList, loading, error } = this.props;
     if (loading) {
@@ -64,7 +63,7 @@ class HomePageComponent extends React.Component<PropsType> {
       );
     }
     if (error) {
-      return <div>网站出错：{error}</div>;
+      return <div>Site Error：{error}</div>;
     }
     return (
       <MainLayout>
@@ -88,7 +87,7 @@ class HomePageComponent extends React.Component<PropsType> {
         <ProductCollection
           title={
             <Typography.Title level={3} type="danger">
-              新品上市
+              {t("home_page.new_arrival")}
             </Typography.Title>
           }
           sideImage={sideImage2}
@@ -97,7 +96,7 @@ class HomePageComponent extends React.Component<PropsType> {
         <ProductCollection
           title={
             <Typography.Title level={3} type="success">
-              国内游推荐
+              {t("home_page.domestic_travel")}
             </Typography.Title>
           }
           sideImage={sideImage3}

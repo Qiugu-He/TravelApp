@@ -53,12 +53,12 @@ export const PaymentCard: React.FC<PropsType> = ({
   const paymentData: Item[] = [
     {
       key: 1,
-      item: "原价",
+      item: "Original Price",
       amount: <Text delete>¥ {originalPrice}</Text>,
     },
     {
       key: 3,
-      item: "现价",
+      item: "Current Price",
       amount: (
         <Title type="danger" level={2}>
           ¥ {price}
@@ -69,21 +69,21 @@ export const PaymentCard: React.FC<PropsType> = ({
 
   return (
     <Card
-      style={{ width: 300, marginTop: 16 }}
+      style={{ width: 340, marginTop: 16 }}
       actions={[
         <Button type="primary" danger onClick={onCheckout} loading={loading}>
           <CheckCircleOutlined />
-          下单支付
+          Confirm
         </Button>,
         <Button onClick={onShoppingCartClear} loading={loading}>
           <DeleteOutlined />
-          清空
+          Clear
         </Button>,
       ]}
     >
       <Skeleton loading={loading} active>
         <Meta
-          title={<Title level={2}>总计</Title>}
+          title={<Title level={2}>Order Summary</Title>}
           description={
             <Table<Item>
               columns={columns}

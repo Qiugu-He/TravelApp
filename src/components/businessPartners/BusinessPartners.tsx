@@ -1,11 +1,13 @@
 import React from "react";
 import { Row, Col, Typography, Divider } from "antd";
 import styles from "./BusinessPartners.modules.css";
+import { useTranslation, withTranslation } from "react-i18next";
+
 
 import image1 from '../../assets/images/microsoft-80658_640.png';
-import image2 from '../../assets/images/icon-720944_640.png';
-import image3 from '../../assets/images/follow-826033_640.png';
-import image4 from '../../assets/images/facebook-807588_640.png';
+import image2 from '../../assets/images/Facebook-Logo-2019.png';
+import image3 from '../../assets/images/ig-logo.png';
+import image4 from '../../assets/images/youtube-logo.png';
 
 const companies = [
     { src: image1, title: "Microsoft"},
@@ -15,12 +17,14 @@ const companies = [
 ]
 
 export const BusinessPartners: React.FC = (props) => {
+  const { t } = useTranslation();
+
   return (
-    <div className={styles.content}>
+    <div style={{ backgroundColor: 'white', padding: '20px', marginTop: '30px'}}>
       <Divider orientation="left">
-        <Typography.Title level={3}>合作企业</Typography.Title>
+        <Typography.Title level={3} type="secondary">{t("business_partners.title")}</Typography.Title>
       </Divider>
-      <Row>
+      <Row justify="center">
         {companies.map((c, index) => (
           <Col span={6} key={"bussiness-partner-" + index}>
             <img
@@ -28,9 +32,9 @@ export const BusinessPartners: React.FC = (props) => {
               src={c.src}
               style={{
                 width: "80%",
-                display: "block",
+                display: "flex",
                 marginLeft: "auto",
-                marginRight: "auto",
+                marginRight: "auto"
               }}
             />
           </Col>

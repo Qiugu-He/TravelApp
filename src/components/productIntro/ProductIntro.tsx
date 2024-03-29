@@ -45,7 +45,6 @@ export const ProductIntro: React.FC<PropsType> = ({
   rating,
   pictures,
 }) => {
-
     const tableDataSource: RowType[] = [
       {
         key: 0,
@@ -79,12 +78,12 @@ export const ProductIntro: React.FC<PropsType> = ({
         ),
       },
       {
-        key: 2,
+        key: 3,
         title: "领取优惠",
         description: coupons ? discount : "无优惠券可领",
       },
       {
-        key: 2,
+        key: 4,
         title: "线路评价",
         description: (
           <>

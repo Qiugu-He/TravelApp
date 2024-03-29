@@ -1,5 +1,6 @@
 import styles from "./SignInForm.module.css";
 import { Form, Input, Button, Checkbox } from "antd";
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { signIn } from "../../redux/user/slice";
 import { useDispatch } from "react-redux";
 import { useSelector, useAppDispatch } from "../../redux/hooks";
@@ -30,7 +31,7 @@ export const SignInForm = () => {
   }, [jwt])
 
   const onFinish = (values: any) => {
-    console.log("Success:", values);
+    //console.log("Success:", values);
     dispatch(signIn({
       email: values.username,
       password: values.password
@@ -54,7 +55,7 @@ export const SignInForm = () => {
         name="username"
         rules={[{ required: true, message: "Please input your username!" }]}
       >
-        <Input />
+        <Input placeholder="Username" />
       </Form.Item>
 
       <Form.Item
@@ -62,7 +63,7 @@ export const SignInForm = () => {
         name="password"
         rules={[{ required: true, message: "Please input your password!" }]}
       >
-        <Input.Password />
+        <Input.Password  placeholder="Password"/>
       </Form.Item>
 
       <Form.Item {...tailLayout} name="remember" valuePropName="checked">
@@ -73,6 +74,7 @@ export const SignInForm = () => {
         <Button type="primary" htmlType="submit">
           Submit
         </Button>
+        Or <a onClick={()=>navigate("/register")}>register now!</a>
       </Form.Item>
     </Form>
   );

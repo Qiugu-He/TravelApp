@@ -67,12 +67,12 @@ export const CheckOutCard: React.FC<PropsType> = ({
             loading={loading}
           >
             <HomeOutlined />
-            回到首页
+            Explore More
           </Button>
         ) : (
           <Button type="primary" danger onClick={onCheckout} loading={loading}>
             <CheckCircleOutlined />
-            支付
+            Order
           </Button>
         ),
       ]}
@@ -80,8 +80,8 @@ export const CheckOutCard: React.FC<PropsType> = ({
       <Skeleton loading={loading} active>
         <Meta
           title={
-            <Title level={2}>
-              {order && order.state === "Completed" ? "支付成功" : "总计"}
+            <Title level={2} type="success">
+              {order && order.state === "Completed" ? "Payment Successed" : "Summary"}
             </Title>
           }
           description={

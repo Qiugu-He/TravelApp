@@ -11,7 +11,6 @@ const PrivateRoute = ({ children }) => {
   return jwt ? children : <Navigate to="/signIn" />;
 };
 
-
 function App() {
   const jwt = useSelector((s) => s.user.token);
   const dispatch = useAppDispatch();

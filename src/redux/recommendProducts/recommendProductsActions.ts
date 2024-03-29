@@ -51,10 +51,15 @@ export const fetchRecommendProductFailActionCreator = (
   };
 };
 
-// thunk 可以返回一个函数，而不一定是js对象
-// 在一个thunk action中可以完成一些列连续的action操作
-// 并且可以处理异步逻辑
-// 业务逻辑可以从ui层面挪到这里，代码分层会更清晰
+/**
+ * Redux-Thunk can return a js object as well as a function
+ * a series continues actions can be perfomed inside a thunk action
+ * business logic can be handled here from ui level, which makes code more clear
+ * thunk 可以返回一个函数，而不一定是js对象
+   在一个thunk action中可以完成一些列连续的action操作
+   并且可以处理异步逻辑
+   业务逻辑可以从ui层面挪到这里，代码分层会更清晰
+ */
 export const giveMeDataActionCreator =
   (): ThunkAction<void, RootState, unknown, RecommendProductAction> =>
   async (dispatch, getState) => {

@@ -24,7 +24,7 @@ export const RegisterForm = () => {
       });
       navigate("/signIn/");
     } catch (error) {
-      alert("注册失败！");
+      alert("Register Failed！");
     }
   };
 
@@ -46,7 +46,7 @@ export const RegisterForm = () => {
         name="username"
         rules={[{ required: true, message: "Please input your username!" }]}
       >
-        <Input />
+        <Input placeholder="Input your usename"/>
       </Form.Item>
 
       <Form.Item
@@ -54,7 +54,7 @@ export const RegisterForm = () => {
         name="password"
         rules={[{ required: true, message: "Please input your password!" }]}
       >
-        <Input.Password />
+        <Input.Password placeholder="Input your password"/>
       </Form.Item>
 
       <Form.Item
@@ -68,12 +68,12 @@ export const RegisterForm = () => {
               if (!value || getFieldValue("password") === value) {
                 return Promise.resolve();
               }
-              return Promise.reject("密码确认不一致！");
+              return Promise.reject("Please make sure your passwords are same！");
             },
           }),
         ]}
       >
-        <Input.Password />
+        <Input.Password placeholder="Please confirm your password"/>
       </Form.Item>
 
       <Form.Item {...tailLayout} name="remember" valuePropName="checked">

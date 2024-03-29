@@ -2,7 +2,7 @@
     "header": {
         "slogan": "让旅行更幸福",
         "add_new_language": "添加新语言",
-        "title": "React 旅游网",
+        "title": "iTravels 旅游网",
         "register":"注册",
         "signin":"登陆",
         "home_page": "旅游首页",
@@ -23,10 +23,10 @@
         "insurance":"保险",
         "shoppingCart": "购物车",
         "signOut": "注销",
-        "welcome": "欢迎回来 "
+        "welcome": ""
     },
     "footer": {
-        "detail" : "版权所有 @ React 旅游网"
+        "detail" : "版权所有 @ iTravels 旅游网"
     },
     "home_page": {
         "hot_recommended": "爆款推荐",
@@ -34,5 +34,16 @@
         "domestic_travel": "国内游推荐",
         "joint_venture": "合作企业",
         "start_from": "(起)"
+    },
+    "business_partners":{
+        "title": "合作企业"
+    },
+    "sideMenuList":{
+        "title": "主题游",
+        "subMenu": [
+            {
+                "title":"爸妈游"
+            }
+        ]
     }
 }

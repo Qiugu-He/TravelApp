@@ -19,6 +19,7 @@ import { useSelector, useAppDispatch } from "../../redux/hooks";
 import { MainLayout } from "../../layouts/mainLayout";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { addShoppingCartItem } from "../../redux/shoppingCart/slice";
+import { useNavigate } from "react-router-dom";
 
 const { RangePicker } = DatePicker;
 
@@ -47,6 +48,8 @@ export const DetailPage: React.FC = () => {
     }
   }, []);
 
+  const navigate = useNavigate();
+
   if (loading) {
     return (
       <Spin
@@ -62,7 +65,7 @@ export const DetailPage: React.FC = () => {
     );
   }
   if (error) {
-    return <div>网站出错：{error}</div>;
+    return <div>Site Error：{error}</div>;
   }
   return (
     <MainLayout>
@@ -83,18 +86,22 @@ export const DetailPage: React.FC = () => {
           </Col>
           <Col span={11}>
             <Button
-                style={{ marginTop: 50, marginBottom: 30, display: "block" }}
-                type="primary"
-                danger
-                loading={shoppingCartLoading}
-                onClick={() => {
+              style={{ marginTop: 50, marginBottom: 30, display: "block" }}
+              type="primary"
+              danger
+              loading={false}
+              onClick={() => {
+                if (jwt) {
                   dispatch(
                     addShoppingCartItem({ jwt, touristRouteId: product.id })
-                  );
-                }}
-              >
+                  )
+                } else {
+                  navigate("/signIn/");
+                }
+              }}
+            >
               <ShoppingCartOutlined />
-              放入购物车
+              Add to My Cart
             </Button>
             <RangePicker open style={{ marginTop: 20 }} />
           </Col>

@@ -57,7 +57,7 @@ class HeaderComponent extends React.Component<PropsType> {
     console.log(e);
     if (e.key === "new") {
       // 处理新语言添加action
-      this.props.addLanguage("新语言", "new_lang");
+      this.props.addLanguage("New Language", "new_lang");
     } else {
       this.props.changeLanguage(e.key);
     }

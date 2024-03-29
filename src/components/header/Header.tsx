@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Header.module.css";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/travel-icon.png";
 import { Layout, Typography, Input, Menu, Button, Dropdown } from "antd";
 import { GlobalOutlined } from "@ant-design/icons";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
@@ -45,10 +45,9 @@ export const Header: React.FC = () => {
   }, [jwt]);
 
   const menuClickHandler = (e) => {
-    console.log(e);
     if (e.key === "new") {
-      // 处理新语言添加action
-      dispatch(addLanguageActionCreator("新语言", "new_lang"));
+      // handle adding new langauge action
+      dispatch(addLanguageActionCreator("New Language", "new_lang"));
     } else {
       dispatch(changeLanguageActionCreator(e.key));
     }
@@ -57,7 +56,7 @@ export const Header: React.FC = () => {
   const onLogout = () => {
     dispatchUser(userSlice.actions.logOut());
     navigate("/");
-    window.location.reload(); // 可加可不加
+    window.location.reload();
   };
 
   return (
@@ -65,7 +64,7 @@ export const Header: React.FC = () => {
       {/* top-header */}
       <div className={styles["top-header"]}>
         <div className={styles.inner}>
-          <Typography.Text>让旅游更幸福</Typography.Text>
+          <Typography.Text>{t("header.slogan")}</Typography.Text>
           <Dropdown.Button
             style={{ marginLeft: 15 }}
             overlay={
@@ -117,7 +116,7 @@ export const Header: React.FC = () => {
           </Typography.Title>
         </span>
         <Input.Search
-          placeholder={"请输入旅游目的地、主题、或关键字"}
+          placeholder={"Enter travel destination, theme, or keywords"}
           className={styles["search-input"]}
           onSearch={(keyword) => navigate("/search/" + keyword)}
         />

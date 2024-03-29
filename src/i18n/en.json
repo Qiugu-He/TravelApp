@@ -1,8 +1,8 @@
 {
     "header": {
         "slogan": "Make travel happier",
-        "add_new_language": "add new language",
-        "title": "React Travel",
+        "add_new_language": "Add New language",
+        "title": "iTravels",
         "register":"Register",
         "signin":"Sign In",
         "home_page": "Home",
@@ -21,12 +21,12 @@
         "high_end":"High-end",
         "outdoor":"Outdoor",
         "insurance":"Insurance",
-        "shoppingCart": "Shopping Cart",
+        "shoppingCart": "My Shopping Cart",
         "signOut": "Sign Out",
-        "welcome": "Welcome back "
+        "welcome": ""
     },
     "footer": {
-        "detail" : "All rights reserved @ ReactTravel.com"
+        "detail" : "All rights reserved @ iTravels"
     },
     "home_page": {
         "hot_recommended": "Hot Recommended",
@@ -34,5 +34,16 @@
         "domestic_travel": "Domestic travel",
         "joint_venture": "Joint Venture",
         "start_from": "(start from)"
+    },
+    "business_partners":{
+        "title": "Business Partners"
+    },
+    "sideMenuList":{
+        "title": "Theme Travel",
+        "subMenu": [
+            {
+                "title":"Family Travel"
+            }
+        ]
     }
 }
