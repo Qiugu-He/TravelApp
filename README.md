@@ -1,6 +1,11 @@
 # iTravel
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-The front-end for an online eCommerce travel platform "iTravel". App built based on React and TypeScript.
+The front-end developed for an online eCommerce travel platform "iTravel". App built based on React and TypeScript.
+
+### Links
+- [Live Address](http://47.98.107.160:12231/)
+
 
 ![iTravel](https://github.com/Qiugu-He/TravelApp/blob/main/public/Screenshoot.png)
 
